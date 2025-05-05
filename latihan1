@@ -1,0 +1,128 @@
+Berikut adalah jawaban untuk tugas latihan 1 tentang Flutter:
+
+1. Cara Membuat Project Flutter Menggunakan Terminal/CMD:  
+   
+   flutter create nama_project
+   
+   Contoh:  
+   
+   flutter create my_app
+   
+
+2. Aturan dalam Memberikan Nama Project pada Flutter:  
+   - Harus menggunakan huruf kecil dan dipisahkan dengan underscore (_).  
+   - Tidak boleh mengandung spasi atau karakter khusus selain underscore.  
+   - Tidak boleh dimulai dengan angka.
+
+3. Folder yang Disiapkan oleh Flutter untuk Platform Tertentu:  
+   - android/ → Untuk aplikasi Android.  
+   - ios/ → Untuk aplikasi iOS.  
+   - linux/ → Untuk aplikasi Linux.  
+   - macos/ → Untuk aplikasi macOS.  
+   - windows/ → Untuk aplikasi Windows.  
+   - web/ → Untuk aplikasi berbasis web.
+
+4. Fungsi Folder .dart_tools dan .idea:  
+   - .dart_tools/ → Berisi metadata terkait dependency dan konfigurasi proyek Dart.  
+   - .idea/ → Berisi konfigurasi proyek khusus untuk IntelliJ IDEA atau Android Studio.
+
+5. Cara Membuka Project Flutter Menggunakan Visual Studio Code:  
+   - Buka terminal atau cmd, lalu masuk ke folder proyek.  
+   - Jalankan perintah:  
+     
+     code .
+     
+
+6. Mengapa Perlu Memastikan Android SDK Terinstall?  
+   - Android SDK menyediakan alat dan emulator yang diperlukan untuk menjalankan serta mengembangkan aplikasi Flutter di perangkat Android.
+
+7. Langkah-langkah Mengatasi "Android Toolchain Error" pada flutter doctor:  
+   - Pastikan Android Studio terinstall.  
+   - Periksa apakah Android SDK terinstall dengan benar.  
+   - Tambahkan SDK ke PATH:  
+     
+     export PATH=$PATH:/path/to/android/sdk
+     
+   - Install atau update alat command-line melalui Android Studio.
+
+8. Cara Menambahkan Android SDK Command-line Tools melalui Android Studio:  
+   - Buka Android Studio → SDK Manager.  
+   - Pilih tab SDK Tools.  
+   - Centang Android SDK Command-line Tools dan klik Apply.
+
+9. Fungsi File .gitignore dalam Struktur Folder Flutter:  
+   - Digunakan untuk mengecualikan file atau folder tertentu agar tidak ikut dikirim ke repositori Git (misalnya build/, .dart_tool/, .idea/).
+
+10. Mengapa pubspec.yaml Penting dalam Pengembangan Flutter?  
+   - Berisi konfigurasi proyek, dependensi (packages), fonts, assets, dan metadata proyek.
+
+11. Apa Itu Widget dalam Flutter?  
+   - Widget adalah elemen UI dalam Flutter yang merepresentasikan komponen visual seperti tombol, teks, atau layout.
+
+12. Pewarisan (Inheritance) dalam Pembuatan Widget Flutter:  
+   - Widget dapat mewarisi sifat dari kelas StatelessWidget atau StatefulWidget untuk membentuk komponen baru.
+
+13. Peran Widget MaterialApp:  
+   - Memberikan struktur dasar aplikasi, seperti tema, navigasi, dan pengaturan lokal.
+
+14. Mengapa runApp Diperlukan dalam Flutter?  
+   - Fungsi runApp() menjalankan aplikasi dan menentukan widget utama yang akan ditampilkan.
+
+15. Kegunaan Widget Scaffold:  
+   - Memberikan struktur dasar aplikasi dengan fitur seperti AppBar, Drawer, BottomNavigationBar.
+
+16. Cara Menambahkan AppBar dan Body pada Scaffold:
+   dart
+   Scaffold(
+     appBar: AppBar(title: Text("Judul Aplikasi")),
+     body: Center(child: Text("Hello Flutter!")),
+   );
+   
+
+17. Perbedaan Stateless Widget dan Stateful Widget:  
+   - StatelessWidget → Tidak dapat berubah setelah dibuat.  
+   - StatefulWidget → Dapat berubah (memiliki state yang bisa diperbarui).
+
+18. Mengapa Stateful Widget Memiliki State Internal?  
+   - Karena State memungkinkan perubahan data yang akan diperbarui tanpa harus membangun ulang seluruh widget.
+
+19. Contoh Penggunaan Stateless Widget:
+   dart
+   class MyWidget extends StatelessWidget {
+     @override
+     Widget build(BuildContext context) {
+       return Text("Hello, Flutter!");
+     }
+   }
+   
+
+20. Contoh Penggunaan Stateful Widget dan Alasan Penggunaannya:
+   dart
+   class CounterApp extends StatefulWidget {
+     @override
+     _CounterAppState createState() => _CounterAppState();
+   }
+
+   class _CounterAppState extends State<CounterApp> {
+     int _counter = 0;
+
+     void _incrementCounter() {
+       setState(() {
+         _counter++;
+       });
+     }
+
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold(
+         appBar: AppBar(title: Text("Counter App")),
+         body: Center(child: Text("Counter: $_counter")),
+         floatingActionButton: FloatingActionButton(
+           onPressed: _incrementCounter,
+           child: Icon(Icons.add),
+         ),
+       );
+     }
+   }
+   
+   
